@@ -1,0 +1,7 @@
+transformers==4.35.0
+torch==2.1.0
+torchvision==0.16.0
+langgraph==0.0.26
+langchain-groq==0.0.1
+langchain-core==0.1.27
+streamlit==1.31.0
