@@ -3,6 +3,16 @@ import os
 from chat_agent import get_chat_agent
 from langchain_core.messages import HumanMessage
 
+# ==========================================
+# 🔒 API KEY SETUP VIA st.secrets
+# ==========================================
+if "GROQ_API_KEY" in st.secrets:
+    os.environ["GROQ_API_KEY"] = st.secrets["GROQ_API_KEY"]
+else:
+    st.error("🚨 GROQ_API_KEY not found in Streamlit secrets! Please add it to .streamlit/secrets.toml")
+    st.stop() # Agar key nahi mili toh app yahin ruk jayega
+# ==========================================
+
 st.set_page_config(page_title="DeepDetect AI Chat", layout="wide")
 
 st.title("🛡️ DeepDetect AI: Forensic Chat")
